@@ -23,3 +23,7 @@
 .cb-app-health > fa-icon{
     margin: 0px 10px 0px 10px;
 }
+.cb-device-cmd {
+    font-size: 25px;
+    margin: 0px 5px;
+}
