@@ -1,0 +1,18 @@
+<div [ngClass]="health" class="text-center" style="height:3em;"><fa-icon [icon]="faCoffee" (click)="getDeviceDetails()"></fa-icon>APP HEALTH - {{ health }}</div>
+<div class="jumbotron m-0 row" *ngFor="let item of devicesArr" >
+    <div style="height:3em;width:100%" class="btn btn-info text-left col-xs-6"> {{ item }} </div>
+    <div class="col-xs-6 row m-0 p-0">    
+        <div class="dropdown ">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Commands
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" (click)="switchOn(item)">ON</a>
+                <a class="dropdown-item" href="#" (click)="switchOff(item)">OFF</a>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary" (click)='showGraph(item)'>RETRIEVE DATA</button>
+        <button type="button" class="btn btn-primary" *ngIf="health === 'Critical'">FNOL</button>
+    </div>   
+</div>
+<chart [type]="type" [data]="data" [options]="options" *ngIf="showData"></chart>

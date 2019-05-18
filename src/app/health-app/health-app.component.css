@@ -1,0 +1,17 @@
+.Critical{
+    width:100%;
+    color:red;
+    background-color:pink;
+}
+
+.Warning{
+    width:100%;
+    color:orange;
+    background-color:orangered;
+}
+
+.Normal{
+    width:100%;
+    color:greenyellow;
+    background-color:green;
+}
