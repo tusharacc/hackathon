@@ -13,16 +13,18 @@ import { ChartModule } from 'angular2-chartjs';
 import {NgxPopperModule} from 'ngx-popper';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HealthStatusComponent } from './health-status/health-status.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HealthAppComponent }
+  { path: '', component: HealthStatusComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    HealthAppComponent
+    HealthAppComponent,
+    HealthStatusComponent
   ],
   imports: [
     BrowserModule,
