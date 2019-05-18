@@ -15,3 +15,11 @@
     color:greenyellow;
     background-color:green;
 }
+
+.cb-app-health{
+    display: flex;
+}
+
+.cb-app-health > fa-icon{
+    margin: 0px 10px 0px 10px;
+}

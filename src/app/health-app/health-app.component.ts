@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataService } from '../data.service';
 import { Subscription } from 'rxjs';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
   selector: 'app-health-app',
   templateUrl: './health-app.component.html',
-  styleUrls: ['./health-app.component.css']
+  styleUrls: ['./health-app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HealthAppComponent implements OnInit {
-  faCoffee = faCoffee;
+  icon = faPlus;
   subscription: Subscription;
   devices:{};
-  devicesArr:Array<string>=[];
-  health:string;
+  devicesArr:Array<string>=['device1'];
+  health:string = "Normal"
   show:boolean=false;
   showData:boolean=false;
   type;
@@ -54,6 +55,7 @@ export class HealthAppComponent implements OnInit {
       (data) => {
         this.health = this.analyzeData(data);
       });
+
   }
 
   humidityResult(humidity){
@@ -68,13 +70,13 @@ export class HealthAppComponent implements OnInit {
   }
 
   getDeviceDetails(){
-    this.devicesArr= [];
-    console.log('I am in devices',this.devices);
-    for(let key in this.devices){
-      this.devicesArr.push(key);
-    }
-    this.show=true;
+    //this.show=true;
 
+  }
+
+  toggleHealth(){
+    this.icon = this.icon == faPlus ? faMinus : faPlus;
+    this.show = this.icon !== faPlus;
   }
 
   switchOn(deviceName){
