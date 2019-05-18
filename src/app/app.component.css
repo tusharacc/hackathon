@@ -1,9 +1,26 @@
 .cb-logo{
-
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
 }
 .cb-app-name{
-
+    display: flex;
+    justify-content: center;
+    font-family: ChubbPublico-Light;
+    font-size: 24px;
+    color: #4B4E52;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 20px;
 }
 .cb-usr{
-    
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+    font-family: ChubbPublico-Roman;
+    font-size: 14px;
+    color: #4B4E52;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 8px;
 }

@@ -1,4 +1,8 @@
 <div class="cb-health">
+  <div class="cb-health-icon">
+    <img src="../assets/HackAssets/Group 11.svg">
+  </div>
+
   <div class="cb-health-txt">App Health:</div>
   <div class="cb-health-val">{{health}}</div>
 </div>
@@ -8,14 +12,17 @@
       <label>Options</label>
     </div>
     <div class="cb-cntnt-opt">
-      <img src="">
-      Water Valve
-      <div *ngIf="!deviceOn">
-        OFF <img>
+      <img src="../../assets/HackAssets/water-drop.svg">
+      <div>
+        <label> Water Valve</label>
+        <div *ngIf="!deviceOn">
+          OFF <img>
+        </div>
+        <div *ngIf="deviceOn">
+          ON <img>
+        </div>
       </div>
-      <div *ngIf="deviceOn">
-        ON <img>
-      </div>
+
     </div>
   </div>
   <div class="cb-sys-status">
