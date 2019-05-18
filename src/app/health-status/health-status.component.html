@@ -15,11 +15,11 @@
       <img src="../../assets/HackAssets/water-drop.svg">
       <div>
         <label> Water Valve</label>
-        <div *ngIf="!deviceOn">
-          OFF <img>
+        <div class="cb-switch" (click)="onSwitch()" *ngIf="deviceOn">
+          ON <img src="../../assets/HackAssets/Switch-ON.svg">
         </div>
-        <div *ngIf="deviceOn">
-          ON <img>
+        <div class="cb-switch" (click)="onSwitch()" *ngIf="!deviceOn">
+          OFF <img src="../../assets/HackAssets/Switch_OFF.svg">
         </div>
       </div>
 
@@ -41,12 +41,12 @@
       FNOL
     </div>
   </div>
-  <div class="cb-questions" (click)="onQuestionsClick()">
-    <div class="cb-hdr">
+  <div class="cb-questions">
+    <div class="cb-hdr" (click)="onQuestionsClick()">
       <label>Questions?</label>
     </div>
-    <div *ngIf="showQuestions" class="cb-cntnt">
-      questions?
+    <div *ngIf="showQuestions" class="cb-cntnt-q">
+      <label>Call Agent</label><span>></span>
     </div>
   </div>
 </div>

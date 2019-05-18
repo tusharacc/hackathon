@@ -36,4 +36,8 @@ export class HealthStatusComponent implements OnInit {
     this.showQuestions = this.showQuestions === true ? false : true;
   }
 
+  onSwitch(){
+    this.deviceOn = this.deviceOn == true ? false: true;
+  }
+
 }

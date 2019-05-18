@@ -40,6 +40,9 @@
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
 }
+.cb-cntnt-opt > div > label{
+    margin-right: 15px;
+}
 .cb-cntnt,.cb-hdr{
     background: #FFFFFF;
 }
@@ -59,4 +62,31 @@
 .cb-cntnt-opt > div, img{
     display: flex;
     margin: 0px 5px;
+}
+
+.cb-switch{
+    display: flex;
+    flex-flow: row nowrap;
+    cursor: pointer;
+}
+
+.cb-cntnt-q{
+    height: 46px;
+    width: 214px;
+    background: #6E27C5;
+    border: 1px solid #6E27C5;
+    display: flex;
+    margin-left: 21px;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+}
+.cb-cntnt-q {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.cb-cntnt-q > label,span{
+    font-family: ChubbPublico-Light;
+    font-size: 23px;
+    color: #FFFFFF;
 }
