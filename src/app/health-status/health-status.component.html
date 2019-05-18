@@ -1,0 +1,42 @@
+<div class="cb-health">
+  <div class="cb-health-txt">App Health:</div>
+  <div class="cb-health-val">{{health}}</div>
+</div>
+<div class="cb-content">
+  <div class="cb-options">
+    <div class="cb-hdr">
+      <label>Options</label>
+    </div>
+    <div class="cb-cntnt-opt">
+      <img src="">
+      Water Valve
+      <div *ngIf="!deviceOn">
+        OFF <img>
+      </div>
+      <div *ngIf="deviceOn">
+        ON <img>
+      </div>
+    </div>
+  </div>
+  <div class="cb-sys-status">
+    <div class="cb-hdr">
+      <label>System Status</label>
+    </div>
+    <div class="cb-cntnt">
+    </div>
+  </div>
+  <div class="cb-fnol">
+    <div class="cb-hdr">
+      <label>FNOL</label>
+    </div>
+    <div class="cb-cntnt">
+    </div>
+  </div>
+  <div class="cb-questions">
+    <div class="cb-hdr">
+      <label>Questions?</label>
+    </div>
+    <div class="cb-cntnt">
+    </div>
+  </div>
+</div>
