@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataService } from '../data.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-health-status',
@@ -15,15 +16,13 @@ export class HealthStatusComponent implements OnInit {
   showSysStatus = false;
   showFNOL = false;
   showQuestions = false;
+  message:string;
+  claimNumber:string;
 
-  constructor(private service:DataService) { }
+  constructor(private service:DataService,private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
-    this.service.getCosmosData()
-    .subscribe(
-      (data) => console.log('Raw Data',data), // success path
-      error => console.error(error) // error path
-    );
+    
 
     this.service.getSensorHealth()
     .subscribe(
@@ -33,15 +32,33 @@ export class HealthStatusComponent implements OnInit {
           this.health = 'Normal';
         } else if (data['status'] == 'warning') {
           this.health = 'Warning';
+          this.message = data['message']
         } else if (data['status'] == 'critical'){
           this.health = 'Critical';
+          this.message = data['message']
         }
       },
       error => console.error('Health Error',error)
     );
   }
 
+  showMessage(){
+    if (this.health == 'Warning' || this.health == 'Critical'){
+      return true;
+    }
+  }
+
   onOptionsClick(){
+    this.service.getSensorHealth().subscribe(
+      (data) => {
+        let status = data['isvalveon'];
+        if (status){
+          this.deviceOn = true;
+        } else {
+          this.deviceOn = false;
+        }
+      }
+    )
     this.showOptions = this.showOptions === true ? false : true;
   }
 
@@ -50,7 +67,15 @@ export class HealthStatusComponent implements OnInit {
   }
 
   onFNOLClick(){
+    this.spinner.show();
     this.showFNOL = this.showFNOL === true ? false : true;
+    setTimeout(() => {
+      let maximum = 100000
+      let minimum = 900000
+      var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+      this.claimNumber = `F${randomnumber}`;
+      this.spinner.hide();
+    }, 2000);
   }
 
   onQuestionsClick(){

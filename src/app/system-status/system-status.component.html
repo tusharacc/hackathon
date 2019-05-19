@@ -3,26 +3,26 @@
 
 <div>Timeline</div>
 
-<div class="checkbox" (click)="getData(hourly)">
+<div class="checkbox" (click)="getData(hourly)" style="color:#60C1F7">
     <div class="">
       <input type="checkbox" aria-label="Checkbox for following text input">
     </div>
-    <label>Hourly</label>
+    <label style="color:#60C1F7">Hourly</label>
 </div>
-<div class="checkbox" (click)="getData(weekly)">
+<div class="checkbox" (click)="getData(weekly)" disabled>
 
     <div class="">
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Checkbox for following text input" disabled>
     </div>
 
-    <label>Weekly</label>
+    <label style="color:gray">Weekly</label>
 </div>
-<div class="checkbox" (click)="getData(monthly)">
+<div class="checkbox" (click)="getData(monthly)" disabled>
   
     <div class="">
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Checkbox for following text input" disabled>
     </div>
 
-    <label>Monthly</label>
+    <label style="color:gray">Monthly</label>
 </div>
 </div>

@@ -22,8 +22,14 @@ export class DataService {
     );
   }
 
-  getCosmosData():Observable<any>{
-    let endpoint = "api/cosmosdb/Documents/latest/2"
+  getCosmosData(frequency='hourly'):Observable<any>{
+    let number;
+    if (frequency == 'hourly'){
+      number = 100
+    } else if(frequency == 'weekly'){
+      number = 2419200
+    }
+    let endpoint = `api/cosmosdb/Documents/latest/${number}`
     return this.http.get(this.baseline + endpoint)
     .pipe(
       catchError(this.handleError)

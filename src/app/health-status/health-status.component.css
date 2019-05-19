@@ -28,7 +28,7 @@
     margin-left:2px;
     background-color: white;
     border-radius: 50%;
-    position: fixed;
+    position: sticky;
     border: 5px solid #01C1D6;
 }
 
@@ -57,10 +57,19 @@
     letter-spacing: 0;
     text-align: center;
     line-height: 22px;
-    /* margin-top: 17px; */
+    margin-top: -30px;
 }
 .cb-health-val{
     font-size: 36px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+    margin-top: 11px;
+}
+
+.cb-health-msg{
+    font-size: 16px;
     color: #FFFFFF;
     letter-spacing: 0;
     text-align: center;

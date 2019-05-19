@@ -23,7 +23,7 @@ export class SystemStatusComponent implements OnInit {
   }
 
   pullData(frequency=null){
-    this.service.getData(frequency).subscribe((data) => {
+    this.service.getCosmosData().subscribe((data) => {
       this.rawData = data;
       this.showData();
     })
@@ -37,7 +37,8 @@ export class SystemStatusComponent implements OnInit {
 
     console.log('I am clicked',this.rawData);
     let dtLabels = this.rawData.map(data => {
-      let dt = new Date(data["_timesteamp"]);
+      let dt = new Date(0);
+      dt.setUTCSeconds(data['_ts'])
       return dt.getUTCHours() + ":" + dt.getUTCMinutes() + ":" + dt.getUTCSeconds();
     });
     let humidity = this.rawData.map((data) => data["humidity"]);

@@ -8,6 +8,7 @@
 
   <div class="cb-health-txt" >App Health:</div>
   <div class="cb-health-val">{{health}}</div>
+  <div class="cb-health-msg" *ngIf="showMessage()">{{message}}</div>
 </div>
 <div class="cb-content">
   <div class="cb-options">
@@ -41,8 +42,9 @@
       <label>FNOL</label>
     </div>
     <div *ngIf="showFNOL" class="cb-cntnt">
-      FNOL
+      {{claimNumber}}
     </div>
+    <ngx-spinner></ngx-spinner>
   </div>
   <div class="cb-questions">
     <div class="cb-hdr" (click)="onQuestionsClick()">
