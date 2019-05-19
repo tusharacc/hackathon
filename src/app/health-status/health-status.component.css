@@ -90,3 +90,20 @@
     font-size: 23px;
     color: #FFFFFF;
 }
+.cb-cntnt-fnol{
+    display: flex;
+    flex-flow: column;
+    margin-left: 23px;
+}
+.fnol-nmbr{
+    font-family: ChubbPublico-Medium;
+    font-size: 23px;
+    color: #4B4E52;
+    line-height: 30px;
+}
+.fnol-txt{
+    font-family: ChubbPublico-Light;
+    font-size: 23px;
+    color: #4B4E52;
+    line-height: 30px;
+}

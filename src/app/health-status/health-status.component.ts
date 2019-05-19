@@ -14,6 +14,7 @@ export class HealthStatusComponent implements OnInit {
   showSysStatus = false;
   showFNOL = false;
   showQuestions = false;
+  claimNumber = "123456789";
 
   constructor() { }
 
