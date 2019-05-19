@@ -8,8 +8,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HealthStatusComponent implements OnInit {
 
-  deviceOn:boolean = true;
-  health:string = "Warnning";
+  deviceOn: boolean = true;
+  health: string = "Warning";
   showOptions = false;
   showSysStatus = false;
   showFNOL = false;
@@ -21,24 +21,46 @@ export class HealthStatusComponent implements OnInit {
   ngOnInit() {
   }
 
-  onOptionsClick(){
+  onOptionsClick() {
     this.showOptions = this.showOptions === true ? false : true;
   }
 
-  onOSysStatusClick(){
+  onOSysStatusClick() {
     this.showSysStatus = this.showSysStatus === true ? false : true;
   }
 
-  onFNOLClick(){
+  onFNOLClick() {
     this.showFNOL = this.showFNOL === true ? false : true;
   }
 
-  onQuestionsClick(){
+  onQuestionsClick() {
     this.showQuestions = this.showQuestions === true ? false : true;
   }
 
-  onSwitch(){
-    this.deviceOn = this.deviceOn == true ? false: true;
+  onSwitch() {
+    this.deviceOn = this.deviceOn == true ? false : true;
   }
+  getBackgroundColor() {
+    if (this.health === 'Warning') {
+      return {
+        "background": "#FFB617",
+        "border-top": "5px solid #ff6600"
+      };
 
+    }
+    else if (this.health === 'Critical') {
+      return {
+        "background": "#FF0000",
+        "border-top": "5px solid #FFB617"
+      };
+
+    } else if (this.health === 'Normal') {
+      return {
+        "background": "#6E27C5",
+        "border-top": "5px solid #01C1D6"
+      };
+
+    }
+
+  }
 }

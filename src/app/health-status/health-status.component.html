@@ -1,4 +1,4 @@
-<div class="cb-health">
+<div class="cb-health" [ngStyle]="getBackgroundColor()">
   <div class="cb-health-icon">
     <img src="../assets/HackAssets/Group 11.svg">
   </div>
@@ -33,7 +33,7 @@
       <app-system-status></app-system-status>
     </div>
   </div>
-  <div class="cb-fnol">
+  <div *ngIf="health === 'Critical'" class="cb-fnol">
     <div class="cb-hdr" (click)="onFNOLClick()">
       <label>FNOL</label>
     </div>

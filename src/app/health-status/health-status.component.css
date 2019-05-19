@@ -45,6 +45,7 @@
 }
 .cb-cntnt,.cb-hdr{
     background: #FFFFFF;
+    cursor: pointer;
 }
 .cb-hdr{
     padding: 21px;
