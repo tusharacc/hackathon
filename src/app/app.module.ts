@@ -15,6 +15,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SystemStatusComponent } from './system-status/system-status.component';
 import { HealthStatusComponent } from './health-status/health-status.component';
+import { PushNotificationService } from './app.pushNotification.service';
 
 const appRoutes: Routes = [
   { path: '', component: HealthStatusComponent }
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     ),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [PushNotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
