@@ -52,10 +52,7 @@ export class HealthAppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.subscription = this.service.getData().subscribe(
-      (data) => {
-        this.health = this.analyzeData(data);
-      });
+  
 
   }
 

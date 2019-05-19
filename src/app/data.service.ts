@@ -37,7 +37,7 @@ export class DataService {
 
   }
 
-  getData(frequency=null):Observable<any>{
+  /* getData(frequency=null):Observable<any>{
     //this.getDataFromCosmos();
     console.log('I am in service');
     if (frequency === null || frequency === 'hourly'){
@@ -51,7 +51,7 @@ export class DataService {
       return this.http.get(endpoint);
     }
     
-  }
+  } */
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
