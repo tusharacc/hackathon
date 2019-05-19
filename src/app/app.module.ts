@@ -13,6 +13,7 @@ import { ChartModule } from 'angular2-chartjs';
 import {NgxPopperModule} from 'ngx-popper';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SystemStatusComponent } from './system-status/system-status.component';
 
 const appRoutes: Routes = [
   { path: '', component: HealthAppComponent }
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MainMenuComponent,
-    HealthAppComponent
+    HealthAppComponent,
+    SystemStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ const appRoutes: Routes = [
     NgxPopperModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

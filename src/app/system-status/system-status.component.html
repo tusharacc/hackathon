@@ -1,0 +1,36 @@
+<div class="bar row">
+  <div class="col-sm-8">
+    System Status
+  </div>
+  <div class="col-sm-4">
+    <fa-icon [icon]="icon" (click)="showData()"></fa-icon>
+  </div>
+</div>
+<div *ngIf="show">
+<chart [type]="type" [data]="data" [options]="options" id="chartshow"></chart>
+
+<div>Timeline</div>
+
+<div class="checkbox" (click)="getData(hourly)">
+    <div class="">
+      <input type="checkbox" aria-label="Checkbox for following text input">
+    </div>
+    <label>Hourly</label>
+</div>
+<div class="checkbox" (click)="getData(weekly)">
+
+    <div class="">
+      <input type="checkbox" aria-label="Checkbox for following text input">
+    </div>
+
+    <label>Weekly</label>
+</div>
+<div class="checkbox" (click)="getData(monthly)">
+  
+    <div class="">
+      <input type="checkbox" aria-label="Checkbox for following text input">
+    </div>
+
+    <label>Monthly</label>
+</div>
+</div>
