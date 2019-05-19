@@ -1,9 +1,12 @@
-<div class="cb-health">
+<div class="cb-health" [ngClass]="health">
   <div class="cb-health-icon">
-    <img src="../assets/HackAssets/Group 11.svg">
+    <div class="circle" [ngClass]="health">
+        <img src="../assets/HackAssets/Group 11.svg">
+    </div>
+    
   </div>
 
-  <div class="cb-health-txt">App Health:</div>
+  <div class="cb-health-txt" >App Health:</div>
   <div class="cb-health-val">{{health}}</div>
 </div>
 <div class="cb-content">
@@ -33,7 +36,7 @@
       <app-system-status></app-system-status>
     </div>
   </div>
-  <div class="cb-fnol">
+  <div class="cb-fnol" *ngIf="health=='Critical'">
     <div class="cb-hdr" (click)="onFNOLClick()">
       <label>FNOL</label>
     </div>

@@ -8,5 +8,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'Home Monitor';
-  user = "Akhilesh";
+  user = "John Doe";
 }
