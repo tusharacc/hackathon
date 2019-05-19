@@ -14,9 +14,10 @@ import {NgxPopperModule} from 'ngx-popper';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SystemStatusComponent } from './system-status/system-status.component';
+import { HealthStatusComponent } from './health-status/health-status.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HealthAppComponent }
+  { path: '', component: HealthStatusComponent }
 ];
 
 @NgModule({
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     MainMenuComponent,
     HealthAppComponent,
-    SystemStatusComponent
+    SystemStatusComponent,
+    HealthStatusComponent
   ],
   imports: [
     BrowserModule,

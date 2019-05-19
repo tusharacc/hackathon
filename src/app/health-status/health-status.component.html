@@ -1,0 +1,52 @@
+<div class="cb-health">
+  <div class="cb-health-icon">
+    <img src="../assets/HackAssets/Group 11.svg">
+  </div>
+
+  <div class="cb-health-txt">App Health:</div>
+  <div class="cb-health-val">{{health}}</div>
+</div>
+<div class="cb-content">
+  <div class="cb-options">
+    <div class="cb-hdr" (click)="onOptionsClick()">
+      <label>Options</label>
+    </div>
+    <div *ngIf="showOptions" class="cb-cntnt-opt">
+      <img src="../../assets/HackAssets/water-drop.svg">
+      <div>
+        <label> Water Valve</label>
+        <div class="cb-switch" (click)="onSwitch()" *ngIf="deviceOn">
+          ON <img src="../../assets/HackAssets/Switch-ON.svg">
+        </div>
+        <div class="cb-switch" (click)="onSwitch()" *ngIf="!deviceOn">
+          OFF <img src="../../assets/HackAssets/Switch_OFF.svg">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="cb-sys-status">
+    <div class="cb-hdr" (click)="onOSysStatusClick()">
+      <label>System Status</label>
+    </div>
+    <div *ngIf="showSysStatus" class="cb-cntnt">
+      <app-system-status></app-system-status>
+    </div>
+  </div>
+  <div class="cb-fnol">
+    <div class="cb-hdr" (click)="onFNOLClick()">
+      <label>FNOL</label>
+    </div>
+    <div *ngIf="showFNOL" class="cb-cntnt">
+      FNOL
+    </div>
+  </div>
+  <div class="cb-questions">
+    <div class="cb-hdr" (click)="onQuestionsClick()">
+      <label>Questions?</label>
+    </div>
+    <div *ngIf="showQuestions" class="cb-cntnt-q">
+      <label>Call Agent</label><span>></span>
+    </div>
+  </div>
+</div>

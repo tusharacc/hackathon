@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable,Subject } from 'rxjs';
+import { Observable,Subject,of } from 'rxjs';
 import { map,catchError  } from 'rxjs/operators';
 
 @Injectable({
@@ -14,20 +14,10 @@ export class DataService {
     
    }
 
-  getDataFromCosmos(){
-    console.log('Called in service');
-    this.http.get(this.baseline)
-    .pipe(
-      catchError((err: HttpErrorResponse) => {
-        console.log(err)
-      }
-      ))
-    
-    console.log('After Call')
-  }
+  
 
   getData(frequency=null):Observable<any>{
-    this.getDataFromCosmos();
+    //this.getDataFromCosmos();
     console.log('I am in service');
     if (frequency === null || frequency === 'hourly'){
       let endpoint = "../assets/db.json";
