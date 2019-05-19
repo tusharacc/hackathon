@@ -8,7 +8,7 @@ import { map,catchError  } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataService {
-  baseline = "http://digihackerapi.azurewebsites.net/"
+  baseline = "https://digihackerapi.azurewebsites.net/"
   //base_url = 'http://localhost:5000/';
   constructor(private http: HttpClient) {
     
