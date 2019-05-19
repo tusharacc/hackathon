@@ -1,0 +1,7 @@
+.checkbox{
+    display:flex;
+}
+
+.checkbox > label {
+    margin-left:0.7em;
+}
