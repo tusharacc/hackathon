@@ -67,15 +67,19 @@ export class HealthStatusComponent implements OnInit {
   }
 
   onFNOLClick(){
-    this.spinner.show();
+    
     this.showFNOL = this.showFNOL === true ? false : true;
-    setTimeout(() => {
-      let maximum = 100000
-      let minimum = 900000
-      var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-      this.claimNumber = `F${randomnumber}`;
-      this.spinner.hide();
-    }, 2000);
+    if (this.showFNOL){
+      this.spinner.show();
+      setTimeout(() => {
+        let maximum = 100000
+        let minimum = 900000
+        var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+        this.claimNumber = `F${randomnumber}`;
+        this.spinner.hide();
+      }, 2000);
+    }
+    
   }
 
   onQuestionsClick(){

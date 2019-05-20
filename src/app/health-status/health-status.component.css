@@ -35,6 +35,10 @@
 
 .circle.Normal{
     border: 5px solid #01C1D6;
+    background-color: rgb(128, 240, 138);
+}
+.circle.Normal > img{
+    display:none;
 }
 
 .circle.Warning{
@@ -91,6 +95,13 @@
 .cb-cntnt-opt > div > label{
     margin-right: 15px;
 }
+
+.cb-cntnt{
+    margin-left:30%;
+    font-weight: bold;
+
+}
+
 .cb-cntnt,.cb-hdr{
     background: #FFFFFF;
 }
