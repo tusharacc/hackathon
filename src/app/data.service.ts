@@ -24,7 +24,7 @@ export class DataService {
 
   updateValveStatus(ind):Observable<any>{
     let endpoint = 'api/health/documents'
-    return this.http.put(this.baseline+endpoint, {"id":"sensor1","sensorid":"sensor1","status":"critical","isvalveon":ind})
+    return this.http.put(this.baseline+endpoint, {"id":"sensor1","sensorid":"sensor1","status":"good","isvalveon":ind})
     .pipe(
       catchError(this.handleError)
     );

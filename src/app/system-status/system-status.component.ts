@@ -70,6 +70,9 @@ export class SystemStatusComponent implements OnInit {
       maintainAspectRatio: false
     };
     this.show=true;
+    setTimeout(() => {
+      this.showData()
+    }, 2000);
   }
   
 
