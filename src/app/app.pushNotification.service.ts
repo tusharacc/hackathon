@@ -8,6 +8,6 @@ export class PushNotificationService {
   constructor(private http: HttpClient) {}
 
   public sendSubscriptionToTheServer(subscription: PushSubscription) {
-    return this.http.post(SERVER_URL, subscription)
+    return this.http.post(SERVER_URL, subscription,{headers: {'mode': 'no-cors' }})
   }
 }
