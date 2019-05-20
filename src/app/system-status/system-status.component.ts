@@ -71,7 +71,7 @@ export class SystemStatusComponent implements OnInit {
     };
     this.show=true;
     setTimeout(() => {
-      this.showData()
+      this.pullData()
     }, 2000);
   }
   
