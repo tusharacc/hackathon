@@ -25,6 +25,7 @@ export class SystemStatusComponent implements OnInit {
   pullData(frequency=null){
     this.service.getCosmosData().subscribe((data) => {
       this.rawData = data;
+      console.log('Data Received');
       this.showData();
     })
   }
@@ -43,8 +44,8 @@ export class SystemStatusComponent implements OnInit {
     });
     let humidity = this.rawData.map((data) => data["humidity"]);
 
-    console.log('date labels',dtLabels);
-    console.log('humidity',humidity);
+    //console.log('date labels',dtLabels);
+    //console.log('humidity',humidity);
     
     this.type = 'line';
     this.data = {

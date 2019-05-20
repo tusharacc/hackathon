@@ -11,7 +11,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class HealthStatusComponent implements OnInit {
 
   deviceOn:boolean = true;
-  health:string;
+  health:string='NOT AVAILABLE';
   showOptions = false;
   showSysStatus = false;
   showFNOL = false;

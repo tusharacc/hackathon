@@ -1,7 +1,9 @@
 .checkbox{
     display:flex;
+    font-family: ChubbPublico-Light;
 }
 
 .checkbox > label {
     margin-left:0.7em;
+    font-family: ChubbPublico-Light;
 }

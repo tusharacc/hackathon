@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
-const SERVER_URL = 'http://localhost:3000/subscription'
+const SERVER_URL = 'https://salty-reaches-52729.herokuapp.com/subscription'
 
 @Injectable()
 export class PushNotificationService {

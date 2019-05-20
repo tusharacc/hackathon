@@ -3,6 +3,7 @@
     flex-flow: column;
     height: 105px;
     margin-top: 11px;
+    background: gray;
     /*background: #FFB617;
     border-top: 5px solid #ff6600;*/
 }
