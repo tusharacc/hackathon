@@ -22,6 +22,14 @@ export class DataService {
     );
   }
 
+  updateValveStatus(ind):Observable<any>{
+    let endpoint = 'api/health/documents'
+    return this.http.put(this.baseline+endpoint, {"id":"sensor1","sensorid":"sensor1","status":"critical","isvalveon":ind})
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   getCosmosData(frequency='hourly'):Observable<any>{
     let number;
     if (frequency == 'hourly'){

@@ -88,6 +88,13 @@ export class HealthStatusComponent implements OnInit {
 
   onSwitch(){
     this.deviceOn = this.deviceOn == true ? false: true;
+    this.service.updateValveStatus(this.deviceOn).subscribe(
+      (data) => {
+        console.log('valve status return',data);
+      }, (err) => {
+        console.log('Error',err)
+      }
+    );
   }
 
 }
