@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
-const SERVER_URL = 'https://salty-reaches-52729.herokuapp.com/subscription'
+const SERVER_URL = 'https://40.76.95.76:3000/subscription'
 
 @Injectable()
 export class PushNotificationService {
   constructor(private http: HttpClient) {}
 
   public sendSubscriptionToTheServer(subscription: PushSubscription) {
-    return this.http.post(SERVER_URL, subscription,{headers: {'Access-Control-Allow-Origin': '*' }})
+    return this.http.post(SERVER_URL, subscription)
   }
 }
