@@ -1,36 +1,28 @@
-<div class="bar row">
-  <div class="col-sm-8">
-    System Status
-  </div>
-  <div class="col-sm-4">
-    <fa-icon [icon]="icon" (click)="showData()"></fa-icon>
-  </div>
-</div>
 <div *ngIf="show">
 <chart [type]="type" [data]="data" [options]="options" id="chartshow"></chart>
 
-<div>Timeline</div>
+<div style="font-family: ChubbPublico-Light;">Timeline</div>
 
-<div class="checkbox" (click)="getData(hourly)">
+<div class="checkbox" (click)="getData(hourly)" >
     <div class="">
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Checkbox for following text input" style="color:#60C1F7" checked>
     </div>
-    <label>Hourly</label>
+    <label style="color:#60C1F7">Hourly</label>
 </div>
-<div class="checkbox" (click)="getData(weekly)">
+<div class="checkbox" (click)="getData(weekly)" disabled>
 
     <div class="">
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Checkbox for following text input" disabled>
     </div>
 
-    <label>Weekly</label>
+    <label style="color:gray">Weekly</label>
 </div>
-<div class="checkbox" (click)="getData(monthly)">
+<div class="checkbox" (click)="getData(monthly)" disabled>
   
     <div class="">
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Checkbox for following text input" disabled>
     </div>
 
-    <label>Monthly</label>
+    <label style="color:gray">Monthly</label>
 </div>
 </div>

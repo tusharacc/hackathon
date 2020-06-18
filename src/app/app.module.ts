@@ -15,7 +15,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SystemStatusComponent } from './system-status/system-status.component';
 import { HealthStatusComponent } from './health-status/health-status.component';
+
+import { LoginComponent } from './login/login.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 import { PushNotificationService } from './app.pushNotification.service';
+
 
 const appRoutes: Routes = [
   { path: '', component: HealthStatusComponent }
@@ -27,7 +32,8 @@ const appRoutes: Routes = [
     MainMenuComponent,
     HealthAppComponent,
     SystemStatusComponent,
-    HealthStatusComponent
+    HealthStatusComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +42,7 @@ const appRoutes: Routes = [
     CommonModule,
     ChartModule,
     NgxPopperModule,
+    NgxSpinnerModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only

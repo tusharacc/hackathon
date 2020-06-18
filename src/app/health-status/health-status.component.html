@@ -1,10 +1,14 @@
-<div class="cb-health">
+<div class="cb-health" [ngClass]="health">
   <div class="cb-health-icon">
-    <img src="../assets/HackAssets/Group 11.svg">
+    <div class="circle" [ngClass]="health">
+        <img src="../assets/HackAssets/Group 11.svg">
+    </div>
+    
   </div>
 
-  <div class="cb-health-txt">App Health:</div>
+  <div class="cb-health-txt" >App Health:</div>
   <div class="cb-health-val">{{health}}</div>
+  <div class="cb-health-msg" *ngIf="showMessage()">{{message}}</div>
 </div>
 <div class="cb-content">
   <div class="cb-options">
@@ -33,20 +37,21 @@
       <app-system-status></app-system-status>
     </div>
   </div>
-  <div class="cb-fnol">
+  <div class="cb-fnol" *ngIf="health=='Critical'">
     <div class="cb-hdr" (click)="onFNOLClick()">
       <label>FNOL</label>
     </div>
     <div *ngIf="showFNOL" class="cb-cntnt">
-      FNOL
+      Your claim number is - {{claimNumber}}
     </div>
+    <ngx-spinner></ngx-spinner>
   </div>
   <div class="cb-questions">
     <div class="cb-hdr" (click)="onQuestionsClick()">
       <label>Questions?</label>
     </div>
     <div *ngIf="showQuestions" class="cb-cntnt-q">
-      <label>Call Agent</label><span>></span>
+      <label><a href="tel:+1-609 271 6068">Call Agent</a></label><span>></span>
     </div>
   </div>
 </div>

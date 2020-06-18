@@ -23,8 +23,9 @@ export class SystemStatusComponent implements OnInit {
   }
 
   pullData(frequency=null){
-    this.service.getData(frequency).subscribe((data) => {
+    this.service.getCosmosData().subscribe((data) => {
       this.rawData = data;
+      console.log('Data Received');
       this.showData();
     })
   }
@@ -37,13 +38,14 @@ export class SystemStatusComponent implements OnInit {
 
     console.log('I am clicked',this.rawData);
     let dtLabels = this.rawData.map(data => {
-      let dt = new Date(data["_timesteamp"]);
+      let dt = new Date(0);
+      dt.setUTCSeconds(data['_ts'])
       return dt.getUTCHours() + ":" + dt.getUTCMinutes() + ":" + dt.getUTCSeconds();
     });
     let humidity = this.rawData.map((data) => data["humidity"]);
 
-    console.log('date labels',dtLabels);
-    console.log('humidity',humidity);
+    //console.log('date labels',dtLabels);
+    //console.log('humidity',humidity);
     
     this.type = 'line';
     this.data = {
@@ -68,6 +70,9 @@ export class SystemStatusComponent implements OnInit {
       maintainAspectRatio: false
     };
     this.show=true;
+    setTimeout(() => {
+      this.pullData()
+    }, 2000);
   }
   
 

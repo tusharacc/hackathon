@@ -24,3 +24,15 @@
     text-align: center;
     margin-top: 8px;
 }
+
+@font-face {
+    font-family: "ChubbPublico-Roman";
+    src: url("/assets/Chubb-fonts-TTF/Chubb-Publico-Roman.ttf");
+    src: url("/assets/Chubb-fonts-WOFF/transfonter/ChubbPublico-Roman.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ChubbPublico-Light";
+    src: url("/assets/Chubb-fonts-TTF/Chubb-Publico-Light.ttf");
+    src: url("/assets/Chubb-fonts-WOFF/transfonter/ChubbPublico-Light.woff") format("woff");
+}
